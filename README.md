@@ -161,7 +161,7 @@ lecture time most efficiently.
 ## Docker usage
 
 If you are runing the Dockerfile on M1 Mac, you have to emulate the x86_64 architecture in the container. 
-You can do this by adding a flag `--platform linux/amd64` (Equivalent to `conda config --env --set subdir osx-64`)
+You can do this by adding a flag `--platform linux/amd64` (similar to `conda config --env --set subdir osx-64`)
 
 ```bash
 docker run -itd --rm --platform linux/amd64 --name test arm64v8/ubuntu /bin/bash 
