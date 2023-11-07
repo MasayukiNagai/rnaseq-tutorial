@@ -19,3 +19,4 @@ scripts/.snakemake*
 !rules/*
 !.gitignore
 .Rproj.user
+!Dockerfile
