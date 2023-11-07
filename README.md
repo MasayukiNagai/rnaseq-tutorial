@@ -157,3 +157,14 @@ Finished job 0.
 If you do not see this, or get stuck anywhere before that, let me know and
 we can have a look at it together - again, BEFORE class, so we can spend the
 lecture time most efficiently.
+
+## Docker usage
+
+If you are runing the Dockerfile on M1 Mac, you have to emulate the x86_64 architecture in the container. 
+You can do this by adding a flag `--platform linux/amd64` (Equivalent to `conda config --env --set subdir osx-64`)
+
+```bash
+docker run -itd --rm --platform linux/amd64 --name test arm64v8/ubuntu /bin/bash 
+docker exec -it test /bin/bash
+```
+
