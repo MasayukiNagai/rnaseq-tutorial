@@ -131,9 +131,6 @@ rule rseqc_coverage:
             -o qc/rseqc/{wildcards.sample}-{wildcards.unit} 2> {log}
         """
 
-<<<<<<< HEAD
-
-=======
 #################################################
 # More QC: Strandedness
 #################################################
@@ -155,7 +152,6 @@ rule rseqc_strandedness:
             -i {input.bam} \ 
             > qc/rseqc/{wildcards.sample}-{wildcards.unit} 2> {log}
         """
->>>>>>> ec4c6df (Update Snakefile)
 
 #################################################
 # Let's put the counts together; script directive
