@@ -131,7 +131,31 @@ rule rseqc_coverage:
             -o qc/rseqc/{wildcards.sample}-{wildcards.unit} 2> {log}
         """
 
+<<<<<<< HEAD
 
+=======
+#################################################
+# More QC: Strandedness
+#################################################
+rule rseqc_strandedness:
+    input:
+        bed="genome/human.GRCh38.chr22.bed",
+        bam="star/{sample}-{unit}.Aligned.sortedByCoord.out.bam",
+        bai="star/{sample}-{unit}.Aligned.sortedByCoord.out.bam.bai"
+    output:
+        "qc/rseqc/{sample}-{unit}.infer_experiment.txt"
+    log:
+        "logs/rseqc/rseqc_coverage/{sample}-{unit}.log"
+    conda:
+        "envs/rseqc.yaml"
+    shell:
+        """
+        infer_experiment.py \
+            -r {input.bed} \
+            -i {input.bam} \ 
+            > qc/rseqc/{wildcards.sample}-{wildcards.unit} 2> {log}
+        """
+>>>>>>> ec4c6df (Update Snakefile)
 
 #################################################
 # Let's put the counts together; script directive
